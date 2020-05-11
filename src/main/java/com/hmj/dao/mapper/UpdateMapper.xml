@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.UpdateDao">
+    <!--<resultMap id="applyMap" type="com.hmj.entity.Apply">-->
+    <!--<id column="id" property="id" />-->
+    <!--<result column="name" property="name" />-->
+    <!--<result column="number" property="number" />-->
+    <!--<result column="address" property="address" />-->
+    <!--<result column="detail" property="detail" />-->
+    <!--<result column="image" property="image" />-->
+    <!--<result column="status" property="status" />-->
+    <!--<result column="create_time" property="create_time" />-->
+    <!--<result column="update_time" property="update_time" />-->
+    <!--</resultMap>-->
+
+    <update id="updateApply" parameterType="Apply">
+        UPDATE apply
+        <set>
+            <if test="name != null">name=#{name},</if>
+            <if test="number != null">number=#{number},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="detail != null">detail=#{detail},</if>
+            <if test="detail != null">detail=#{detail},</if>
+            <if test="image != null">image=#{image},</if>
+            <if test="status != null">status=#{status},</if>
+            <if test="create_time != null">create_time=#{create_time},</if>
+            <if test="update_time != null">update_time=#{update_time}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateIntegral" parameterType="User">
+        UPDATE user
+        <set>
+        <if test="password != null">password=#{password},</if>
+        <if test="email != null">email=#{email},</if>
+        <if test="integral != null">integral=#{integral},</if>
+        <if test="role != null">role=#{role},</if>
+        <if test="create_time != null">create_time=#{create_time},</if>
+        <if test="update_time != null">update_time=#{update_time}</if>
+        </set>
+        where name = #{name}
+    </update>
+
+    <update id="updateArticle" parameterType="Article">
+        UPDATE article
+        <set>
+        <if test="title != null">title=#{title},</if>
+        <if test="time != null"> time=#{time},</if>
+        <if test="content != null">content=#{content},</if>
+        <if test="image != null">image=#{image},</if>
+        <if test="create_time != null">create_time=#{create_time},</if>
+        <if test="update_time != null">update_time=#{update_time}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateOrder" parameterType="Order">
+        UPDATE user_order
+        <set>
+            <if test="user_name != null">user_name=#{user_name},</if>
+            <if test="order_no != null"> order_no=#{order_no},</if>
+            <if test="sender_name != null">sender_name=#{sender_name},</if>
+            <if test="sender_number != null">sender_number=#{sender_number},</if>
+            <if test="sender_address != null">sender_address=#{sender_address},</if>
+            <if test="sender_time != null">sender_time=#{sender_time},</if>
+            <if test="status != null">status=#{status},</if>
+            <if test="create_time != null">create_time=#{create_time},</if>
+            <if test="update_time != null">update_time=#{update_time}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateShopUserOrder" parameterType="ShopUserOrder">
+        UPDATE shop_user_order
+        <set>
+            <if test="user_name != null">user_name=#{user_name},</if>
+            <if test="status != null">status=#{status},</if>
+            <if test="create_time != null">create_time=#{create_time},</if>
+            <if test="update_time != null">update_time=#{update_time}</if>
+        </set>
+        where order_no = #{order_no}
+    </update>
+
+
+
+</mapper>

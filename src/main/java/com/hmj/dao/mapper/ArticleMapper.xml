@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.ArticleDao">
+    <resultMap id="article" type="com.hmj.entity.Article">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="time" property="time" />
+        <result column="short_word" property="short_word" />
+        <result column="content" property="content" />
+        <result column="image" property="image" />
+    </resultMap>
+
+
+    <select id="select" resultMap="article">
+        SELECT  * FROM article
+    </select>
+
+
+    <insert id="insert" parameterType="Article" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO article(title, time, content, image, create_time, update_time)
+        VALUE(#{title}, #{time}, #{content}, #{image}, #{create_time}, #{update_time} )
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM article WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.CheckOutDao">
+
+    <!--<resultMap id="checkout" type="com.hmj.entity.CheckOut">-->
+    <!--<id column="id" property="id" />-->
+    <!--<result column="order_no" property="order_no" />-->
+    <!--<result column="name" property="name" />-->
+    <!--<result column="number" property="number" />-->
+    <!--<result column="address" property="address" />-->
+    <!--<result column="create_time" property="create_time" />-->
+    <!--<result column="update_time" property="update_time" />-->
+    <!--</resultMap>-->
+
+
+    <select id="selectByOrderNo" resultType="CheckOut" parameterType="String">
+    SELECT  * FROM checkout
+    WHERE order_no = #{order_no}
+    </select>
+
+    <!--<select id="selectAllOrderByName" resultMap="order" parameterType="java.lang.String">-->
+    <!--SELECT  * FROM user_order-->
+    <!--WHERE user_name = #{name}-->
+    <!--</select>-->
+
+    <!--<select id="search" resultMap="order" parameterType="java.lang.String">-->
+    <!--SELECT  * FROM user_order-->
+    <!--WHERE order_no LIKE concat('%',#{order_no},'%')-->
+    <!--</select>-->
+
+
+    <insert id="insert" parameterType="CheckOut">
+        INSERT INTO checkout(order_no, name, number, address, create_time, update_time)
+        VALUE(#{order_no}, #{name}, #{number}, #{address}, #{create_time},  #{update_time})
+    </insert>
+
+    <!--<delete id="delete" parameterType="int">-->
+    <!--DELETE FROM user_order WHERE id = #{id}-->
+    <!--</delete>-->
+
+    <!--<select id="select" resultType="ProductItem" parameterType="String" >-->
+        <!--SELECT  * FROM product_item-->
+        <!--WHERE order_no = #{order_no}-->
+    <!--</select>-->
+
+    <!--<select id="selectUserNameById" resultType="String" parameterType="int" >-->
+    <!--SELECT  user_name FROM user_order-->
+    <!--WHERE id = #{id}-->
+    <!--</select>-->
+
+    <!--<update id="update" parameterType="User" useGeneratedKeys="true" keyProperty="id">-->
+    <!--UPDATE user SET password = #{password} WHERE email = #{email}-->
+    <!--</update>-->
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.ProductDao">
+
+    <resultMap id="product" type="com.hmj.entity.Product">
+        <id column="product_id" property="product_id" />
+        <result column="name" property="name" />
+        <result column="price" property="price" />
+        <result column="detail" property="detail" />
+        <result column="stock" property="stock" />
+        <result column="role" property="role" />
+        <result column="main_image" property="main_image" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+    <select id="selectById" resultType="product" parameterType="int" >
+        SELECT  * FROM product
+        WHERE product_id = #{product_id}
+    </select>
+
+    <!--<insert id="insert" parameterType="User" keyProperty="id" useGeneratedKeys="true">-->
+        <!--INSERT INTO user(name, password, email, integral, role, create_time, update_time)-->
+        <!--VALUE(#{name}, #{password}, #{email}, 0, 0, #{create_time}, #{update_time} )-->
+    <!--</insert>-->
+
+    <!--<delete id="delete" parameterType="int">-->
+        <!--DELETE FROM user WHERE id = #{id}-->
+    <!--</delete>-->
+
+    <!--<select id="selectByEmail" resultType="User" parameterType="String" >-->
+        <!--SELECT  * FROM user-->
+        <!--WHERE email = #{email}-->
+    <!--</select>-->
+
+    <!--<select id="selectByName" resultType="User" parameterType="String" >-->
+        <!--SELECT  * FROM user-->
+        <!--WHERE name = #{name}-->
+    <!--</select>-->
+
+    <!--<update id="update" parameterType="User" useGeneratedKeys="true" keyProperty="id">-->
+        <!--UPDATE user SET password = #{password}, update_time = #{update_time} WHERE email = #{email}-->
+    <!--</update>-->
+
+    <!--<select id="selectAllUser" resultMap="user">-->
+        <!--SELECT  * FROM user-->
+    <!--</select>-->
+
+</mapper>

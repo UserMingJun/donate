@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.BookOrderItemDao">
+
+    <resultMap id="bookOrderItem" type="com.hmj.entity.BookOrderItem">
+        <id column="order_no" property="order_no" />
+        <result column="address" property="address" />
+        <result column="quantity" property="quantity" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+
+    <insert id="insert" parameterType="BookOrderItem" keyProperty="order_no">
+        INSERT INTO book_order_item(order_no, address, quantity, create_time, update_time)
+        VALUE(#{order_no}, #{address}, #{quantity}, #{create_time},  #{update_time})
+    </insert>
+
+    <select id="select" resultMap="bookOrderItem" >
+        SELECT  * FROM book_order_item
+    </select>
+
+    <delete id="delete" parameterType="String">
+      DELETE FROM book_order_item WHERE order_no = #{order_no}
+    </delete>
+
+    <select id="selectByOrderNo" resultMap="bookOrderItem" parameterType="String">
+    SELECT  * FROM book_order_item WHERE order_no = #{order_no}
+    </select>
+
+    <!--<select id="selectByEmail" resultType="User" parameterType="String" >-->
+    <!--SELECT  * FROM user-->
+    <!--WHERE email = #{email}-->
+    <!--</select>-->
+
+    <!--<update id="update" parameterType="User" useGeneratedKeys="true" keyProperty="id">-->
+    <!--UPDATE user SET password = #{password} WHERE email = #{email}-->
+    <!--</update>-->
+
+</mapper>

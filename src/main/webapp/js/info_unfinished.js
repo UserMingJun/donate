@@ -1,0 +1,12 @@
+$(function(){
+    $(document).ready(function(){
+        $.getJSON("/user/getIntegral",function(res){
+            console.log(res);
+            $('#integral').append(res.integral);
+        });
+    $.getJSON("/init/initUnfinishedOrder",function(res){
+        console.log(res);
+        $("#unfinishedordertable").datagrid(res);
+    });
+    })
+});

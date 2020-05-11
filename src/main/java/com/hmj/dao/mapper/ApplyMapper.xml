@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.ApplyDao">
+    <resultMap id="apply" type="com.hmj.entity.Apply">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="number" property="number" />
+        <result column="address" property="address" />
+        <result column="detail" property="detail" />
+        <result column="image" property="image" />
+        <result column="status" property="status" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+
+    <select id="select" resultMap="apply">
+        SELECT  * FROM apply
+    </select>
+
+    <select id="selectPassApply" resultMap="apply">
+        SELECT  * FROM apply
+        WHERE status = 1
+    </select>
+
+
+    <insert id="insert" parameterType="Apply" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO apply(name, number, address, detail, image, status, create_time, update_time)
+        VALUE(#{name}, #{number}, #{address}, #{detail}, #{image}, #{status}, #{create_time}, #{update_time})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM apply WHERE id = #{id}
+    </delete>
+
+
+
+</mapper>

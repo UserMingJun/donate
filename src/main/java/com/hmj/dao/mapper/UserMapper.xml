@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.UserDao">
+
+    <resultMap id="user" type="com.hmj.entity.User">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="email" property="email" />
+        <result column="integral" property="integral" />
+        <result column="role" property="role" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+    <select id="select" resultType="User" parameterType="User" >
+        SELECT  * FROM user
+        WHERE name = #{name} AND password = #{password}
+    </select>
+
+    <insert id="insert" parameterType="User" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO user(name, password, email, integral, role, create_time, update_time)
+        VALUE(#{name}, #{password}, #{email}, 0, 0, #{create_time}, #{update_time} )
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <select id="selectByEmail" resultType="User" parameterType="String" >
+        SELECT  * FROM user
+        WHERE email = #{email}
+    </select>
+
+    <select id="selectByName" resultType="User" parameterType="String" >
+        SELECT  * FROM user
+        WHERE name = #{name}
+    </select>
+
+    <update id="update" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        UPDATE user SET password = #{password}, update_time = #{update_time} WHERE email = #{email}
+    </update>
+
+    <select id="selectAllUser" resultMap="user">
+        SELECT  * FROM user
+    </select>
+
+</mapper>

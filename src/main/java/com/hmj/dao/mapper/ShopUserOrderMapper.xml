@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmj.dao.ShopUserOrderDao">
+
+    <resultMap id="shopUserOrder" type="com.hmj.entity.ShopUserOrder">
+        <id column="id" property="id" />
+        <result column="order_no" property="order_no" />
+        <result column="user_name" property="user_name" />
+        <result column="status" property="status" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+    <select id="select" resultType="ShopUserOrder" parameterType="ShopUserOrder" >
+        SELECT  * FROM shop_user_order
+        WHERE user_name = #{user_name} AND status = 0
+    </select>
+
+    <select id="selectByOrderNo" resultType="ShopUserOrder" parameterType="ShopUserOrder" >
+        SELECT  * FROM shop_user_order
+        WHERE order_no = #{order_no}
+    </select>
+
+    <insert id="insert" parameterType="ShopUserOrder" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO shop_user_order(order_no, user_name, status, create_time, update_time)
+        VALUE(#{order_no}, #{user_name}, 0, #{create_time}, #{update_time} )
+    </insert>
+
+    <!--<delete id="delete" parameterType="int">-->
+        <!--DELETE FROM user WHERE id = #{id}-->
+    <!--</delete>-->
+
+    <select id="selectByName" resultMap="shopUserOrder" parameterType="String" >
+        SELECT  * FROM shop_user_order
+        WHERE user_name = #{user_name}
+    </select>
+
+    <!--<select id="selectByName" resultType="User" parameterType="String" >-->
+        <!--SELECT  * FROM user-->
+        <!--WHERE name = #{name}-->
+    <!--</select>-->
+
+    <!--<update id="update" parameterType="User" useGeneratedKeys="true" keyProperty="id">-->
+        <!--UPDATE user SET password = #{password}, update_time = #{update_time} WHERE email = #{email}-->
+    <!--</update>-->
+
+    <!--<select id="selectAllUser" resultMap="user">-->
+        <!--SELECT  * FROM user-->
+    <!--</select>-->
+
+</mapper>
