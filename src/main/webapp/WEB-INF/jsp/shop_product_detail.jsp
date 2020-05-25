@@ -71,7 +71,7 @@
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.jsp"><img src="../images/logo.png" alt=""></a>
+            <a href="/menu/index"><img src="../images/logo.png" alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -87,7 +87,7 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.jsp"><img src="../images/logo.png" alt=""></a>
+            <a href="/menu/index"><img src="../images/logo.png" alt=""></a>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
@@ -187,17 +187,17 @@
                             <p class="product-price">￥<%=product.getPrice()%></p>
                             <h3><%=product.getName()%></h3>
                             <!-- Ratings & Review -->
-                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                                <div class="ratings">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <!-- Avaiable -->
-                            <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                            <%--<div class="ratings-review mb-15 d-flex align-items-center justify-content-between">--%>
+                                <%--<div class="ratings">--%>
+                                    <%--<i class="fa fa-star" aria-hidden="true"></i>--%>
+                                    <%--<i class="fa fa-star" aria-hidden="true"></i>--%>
+                                    <%--<i class="fa fa-star" aria-hidden="true"></i>--%>
+                                    <%--<i class="fa fa-star" aria-hidden="true"></i>--%>
+                                    <%--<i class="fa fa-star" aria-hidden="true"></i>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                            <%--<!-- Avaiable -->--%>
+                            <p class="avaibility"></p>
                         </div>
 
                         <div class="short_overview my-5">
@@ -207,7 +207,7 @@
                         <!-- Add to Cart Form -->
                         <form class="cart clearfix"  action="/shop/addToCart" method="post">
                             <div class="cart-btn d-flex mb-50">
-                                <p>Qty</p>
+                                <p>数量</p>
                                 <div class="quantity">
                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
                                     <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="theQuantity" value="1">
@@ -218,7 +218,7 @@
                                 <%--out.println("<input type='hidden' value='" + product.getProduct_id() + "' name='product_id'>");--%>
                                 <%--out.println("<input type='hidden' value='" + product.getPrice() + "' name='price'>");--%>
                             <%--%>--%>
-                            <button type="submit" id= "addtocart" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                            <button type="submit" id= "addtocart" name="addtocart" value="5" class="btn amado-btn">加入购物车</button>
                         </form>
                     </div>
                 </div>

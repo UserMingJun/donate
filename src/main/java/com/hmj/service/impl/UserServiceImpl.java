@@ -73,6 +73,7 @@ public class UserServiceImpl implements UserService {
         ) {
             if (arr.getRole() == 0){
                 Calendar calendar = Calendar.getInstance();
+                calendar.setTime(arr.getCreate_time());
                 int year = calendar.get(Calendar.YEAR);
                 if (year == 2017){
                     sum_2017++;

@@ -37,6 +37,7 @@ public class ClothesOrderItemServiceImpl implements ClothesOrderItemService {
         for (ClothesOrderItem arr:clothesOrderItemList
         ) {
             Calendar calendar = Calendar.getInstance();
+            calendar.setTime(arr.getCreate_time());
             int year = calendar.get(Calendar.YEAR);
             if (year == 2017){
                 sum_2017++;

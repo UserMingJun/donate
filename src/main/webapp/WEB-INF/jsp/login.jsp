@@ -42,7 +42,7 @@
             </div>
 
             <div class="button login">
-                <button type="button" id="login_btn" onclick="login()"><span>GO</span> <i class="fa fa-check"></i></button>
+                <button type="button" id="login_btn" onclick="login()"><span>登陆</span> <i class="fa fa-check"></i></button>
             </div>
         </form>
         <a href="/user/toFindPass" class="pass-forgot">忘记密码? </a>
@@ -73,7 +73,7 @@
             </div>
 in
             <div class="button">
-                <button type="button" onclick="regist()"><span>下一步</span></button>
+                <button type="button" onclick="regist()"><span>注册</span></button>
             </div>
         </form>
 

@@ -689,7 +689,7 @@
 
 
     $.getJSON("/manage/chart_data",function(res){
-        // console.log(res);
+        console.log(res);
         var clothes_sum_2017 = res.clothesYearSum[0];
         var clothes_sum_2018 = res.clothesYearSum[1];
         var clothes_sum_2019 = res.clothesYearSum[2];

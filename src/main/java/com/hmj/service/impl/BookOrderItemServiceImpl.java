@@ -38,6 +38,7 @@ public class BookOrderItemServiceImpl implements BookOrderItemService {
         for (BookOrderItem arr:bookOrderItemList
         ) {
             Calendar calendar = Calendar.getInstance();
+            calendar.setTime(arr.getCreate_time());
             int year = calendar.get(Calendar.YEAR);
             if (year == 2017){
                 sum_2017++;

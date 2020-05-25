@@ -92,25 +92,6 @@ public class OrderController {
             orderService.insertOrder(order);
 
 
-//            //更新积分
-//            if (weight.equals("5kg-15kg")){
-//                add = 10;
-//            }
-//            if (weight.equals("15kg-25kg")){
-//                add = 20;
-//            }
-//            if (weight.equals("25kg-35kg")){
-//                add = 30;
-//            }
-//            if (weight.equals("35kg-200kg")){
-//                add = 40;
-//            }
-//            if (weight.equals("200kg以上")){
-//                add = 50;
-//            }
-//            user.setUpdate_time(date);
-//            user.setIntegral(user.getIntegral()+add);
-//            updateService.updateIntegral(user);
 
 
             //添加clothesOrderItem信息
@@ -157,7 +138,7 @@ public class OrderController {
         if (sender_name.equals("") || sender_number.equals("") || sender_time.equals("")){
             jsonObject.put("status", 100);
             jsonObject.put("message", "预约失败,请填入必要信息");
-        }else if(!sender_number.matches("^[1](([3|5|8][\\\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\\\d]{8}$")){
+        }else if(!sender_number.matches("^[1](([3|5|8][\\d])|([4][5,6,7,8,9])|([6][5,6])|([7][3,4,5,6,7,8])|([9][8,9]))[\\d]{8}$")){
             jsonObject.put("status", 100);
             jsonObject.put("message", "预约失败,请填入正确手机号");
         }else{
@@ -172,23 +153,6 @@ public class OrderController {
             orderService.insertOrder(order);
 
 
-            //更新积分
-//            if (quantity.equals("5-20本")){
-//                add = 10;
-//            }
-//            if (quantity.equals("20-35本")){
-//                add = 20;
-//            }
-//            if (quantity.equals("35-50本")){
-//                add = 30;
-//            }
-//            if (quantity.equals("50本以上")){
-//                add = 40;
-//            }
-//
-//            user.setUpdate_time(date);
-//            user.setIntegral(user.getIntegral()+add);
-//            updateService.updateIntegral(user);
 
 
             bookOrderItem.setOrder_no(order_no);

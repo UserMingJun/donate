@@ -371,8 +371,8 @@
 <div class="about">
     <div class="col-md-6 w3_agileits_about_left">
         <div class='bar_group'>
-            <h4 style="color: white; line-height: 2em;">所列申请皆由公益组织经过审核后发布，为了让大家的爱心不至于泛滥，
-                我们所有公布的捐赠申请有效期为20天，请各位捐赠人按照申请需求自行联系申请人进行捐赠且该过程中产生的费用不由本组织承担。</h4>
+            <h4 style="color: white; line-height: 2em;">所列申请皆由公益组织经过审核后发布，本组织保证审核通过的申请信息均真实有效，
+                请各位捐赠人按照申请需求自行联系申请人进行捐赠且该过程中产生的费用不由本组织承担。</h4>
             <%--<div class='bar_group__bar thin elastic' label='donations' value='230'></div>--%>
             <%--<div class='bar_group__bar thin elastic' label='Participations' value='130'></div>--%>
             <%--<div class='bar_group__bar thin elastic' label='Fundraise' value='160'></div>--%>

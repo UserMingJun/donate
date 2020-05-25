@@ -50,7 +50,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span><%=user.getName()%></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="lnr lnr-user"></i> <span id="integral">当前积分:</span></a></li>
+                            <li><a href="/menu/shop_index"><i class="lnr lnr-user"></i> <span id="integral">当前积分:</span></a></li>
                             <li><a href="/user/exit"><i class="lnr lnr-exit"></i> <span>退出登录</span></a></li>
                         </ul>
                     </li>

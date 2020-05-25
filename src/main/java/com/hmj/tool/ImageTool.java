@@ -11,7 +11,7 @@ public class ImageTool {
     public static String uploadImage(MultipartFile imageFile) throws IOException {
         String newImageName = null;
         if (!imageFile.isEmpty()) {    //(1)
-            String realPath = "E:\\IDEA-WorkSpace\\ssm_1\\src\\main\\webapp\\images\\";  //(2)
+            String realPath = "E:\\IDEA-WorkSpace\\donate\\src\\main\\webapp\\images\\";  //(2)
             String originalName = imageFile.getOriginalFilename();  //(3)
             String uuidName = UUID.randomUUID().toString();  //(4)
             newImageName = uuidName + originalName.substring(originalName.lastIndexOf("."));  //(4)
