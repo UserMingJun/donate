@@ -10,7 +10,7 @@
   <packaging>war</packaging>
 
   <properties>
-    <org.springframework.version>4.3.7.RELEASE</org.springframework.version>
+    <org.springframework.version>5.2.20.RELEASE</org.springframework.version>
     <mybatis.version>3.5.0</mybatis.version>
   </properties>
 
@@ -141,7 +141,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.3.7.RELEASE</version>
+      <version>5.2.20.RELEASE</version>
     </dependency>
 
 
